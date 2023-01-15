@@ -1,6 +1,6 @@
-if SHIELD_THERUNNER
+if SHIELD_TUBETEST
             
 config ZMK_KEYBOARD_NAME
-    default "TheRunner"
+    default "TubeTest"
 
 endif
