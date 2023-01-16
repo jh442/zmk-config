@@ -1,0 +1,6 @@
+if SHIELD_RUNNER65
+            
+config ZMK_KEYBOARD_NAME
+    default "Runner65"
+
+endif
