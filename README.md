@@ -102,7 +102,7 @@ At this point, I wanted to go ahead and solder in the switch, reset button, and 
 I went ahead and solder header pins to the nice!nano. I wanted to easily be able to pull this in and out of my breadboard and final board. You can see in the 3D print design, I made the space to glue in the header pins so I could just put in my board.
 (Mistake #3: I solder wires for the battery to the nice!nano to the switch so I can't actually take out or replace the nice!nano.)
 
-### The Matrix
+### The Matrix Wiring
 
 The part to be careful here is really figuring out how many pins you have available on your micro-controller and how your rows+columns number is going to be less then that (i.e. 14 columns and 5 rows = 19 pins needed ).
 To make sure no key is wired on a row or column value you aren't going to assign, you may have to get a bit creative. Take your time with this and draw it out BEFORE solder anything.
@@ -117,6 +117,8 @@ The next step was doing the columns according to my matrix diagram. Using wire c
 
 ![Alt text](./files/images/columns.png "Runner65 columns")
 
+When I was complete and it was time to test the firmware, I definitely had "renegade" key presses going on. I found that this was because some of my diode wires were sharp enough to connect the circuit of other rows. To fix this, I just had to move some more of the wire encasing around.
+
 ### The Pin Assignment
 
 I printed off the diagram of the Nice!Nano and then actually drew out which columns and rows I were going to put to each pin. Since you solder from the back, just be aware that you are soldering the backwards. I absolutely made a few mistakes with this the first time and had to solder some of my pins.
@@ -125,6 +127,45 @@ I felt this was the most difficult part just because wires were starting to get 
 
 ![Alt text](./files/images/wires.png "Runner65 wires")
 
+#### Some defaults
+
+Screen pins. I couldn't find it in the original documentation so it took some searching in discord but the default pins for the OLED are `mosi = P0.17 and sck = P0.20`.
+
 ## The Coding
 
-I have a coding background, but nothing related to firmware for keyboards. I made a new shield and followed a couple other models
+Before even trying any modelling, I wanted to try loading a base firmware to the micro-controller to just get a good understanding of that. ZMK and Nice!Nano made that simple by auto triggering github actions to generate the firmware
+and then the N!N (Nice!Nano) having a "drag and drop" function for loading the firmware.
+
+Some information about the shield files...
+
+### build.yaml
+
+This just needed the name of the shield, `nice_view_adapter` and `nice_view` since I was using the screen. The shield name MUST be consistent across all the following files.
+
+### Kconfig.defconfig
+
+This needed the name of my board. This translates to the BT name that will be translated as well.
+
+### Kconfig.shield
+
+This needed to reference the shield name. **One item here that caused troubles was having an [extra space](https://github.com/jh442/zmk-config/commit/60402e229704a8cd708d741fd00f974ca41569ce) in the parameters!**
+
+### runner65.conf
+
+This has the basic config settings for the board and what widgets you want to display on the screen. To help troubleshooting BT connection issues, I did occasionally set up `CONFIG_ZMK_USB_LOGGING`.
+
+### runner65.overlay
+
+The important part here was to understand the pin assignment. Again, I highly recommend drawing this out and I also recommend using the GPIO pin assignment [instead of the pro_micro reference](https://github.com/jh442/zmk-config/commit/2a1e68298393d6b397e3fcfd9a384f265368d2a5). For me, it was more clear for documentation.
+
+I matrix mapping should follow your diagram. With spacing maybe not reflecting your keys, setting the correct `RC()` values can get a bit confusion. I definitely made a couple mistakes here when testing my first iterations of the firmware.
+
+### runner65.keymap
+
+The keymap file is where you assign the keys from your matrix. The layout of this _should_ match that of what was in your overlay. I did notice my keyboard behavior being all over the place which was caused by me missing a keymap value, causing my row/column amounts to not match.
+
+I first started working on getting my top layer to work as I would expect. Then I moved onto the BT, where nothing would connect. If you want BT to work, you MUST have a BT layer set up (`&mo 1` access). If anything, so you can control which BT profile you are using or if you need to clear them. I didn't quite understand this when I was first setting this all up.
+
+If you connect your phone to keyboard, it will reserve that profile connection to your phone, so you can switch it, clear it, etc unless you have a programmatic way to do that through your keyboard (i.e. `BT_CLR`, `BT_SEL X`).
+
+The [Keyboard Tester](keyboardtester.com/) website was a great resource for seeing if I had my keys set correctly. I had a sign of relief when I felt like I was just to the point where I was adding different key commands to be second layer for convenience instead of fixing a problem.
