@@ -107,7 +107,7 @@ I went ahead and solder header pins to the nice!nano. I wanted to easily be able
 The part to be careful here is really figuring out how many pins you have available on your micro-controller and how your rows+columns number is going to be less then that (i.e. 14 columns and 5 rows = 19 pins needed ).
 To make sure no key is wired on a row or column value you aren't going to assign, you may have to get a bit creative. Take your time with this and draw it out BEFORE solder anything.
 
-(Picture to come)
+![Alt text](./files/images/wire-diagram.png "Runner65 matrix wire diagram")
 
 From there, I started with soldering the diodes to get the rows soldered. These were long and flexible so they made it easy.
 
@@ -122,6 +122,8 @@ When I was complete and it was time to test the firmware, I definitely had "rene
 ### The Pin Assignment
 
 I printed off the diagram of the Nice!Nano and then actually drew out which columns and rows I were going to put to each pin. Since you solder from the back, just be aware that you are soldering the backwards. I absolutely made a few mistakes with this the first time and had to solder some of my pins.
+
+![Alt text](./files/images/diagram.png "Runner65 pin assignments")
 
 I felt this was the most difficult part just because wires were starting to get crammed together. This is another reason in my design (since this was my first keyboard) that I wanted a little extra space in the design.
 
