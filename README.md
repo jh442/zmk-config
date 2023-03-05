@@ -12,7 +12,7 @@ Below are the parts I purchased for this project:
 
 - $25 - [Nice!Nano](https://nicekeyboards.com/nice-nano/) micro-controller - I wanted bluetooth
 - $20 - [Nice!View](https://nicekeyboards.com/nice-view) - I wanted an OLED screen to display random stuff.
-- $3 - [110mA Battery](https://typeractive.xyz/products/lithium-battery-110mah) - I wanted this to be wireless
+- $3 - [110mA Battery](https://typeractive.xyz/products/lithium-battery-110mah) - I wanted this to be wireless (for those wondering, after about a week of use, I'm at 80%)
 - $35.31 [72 pcs Yellow Switches](https://www.amazon.com/dp/B09VBKZPMW?psc=1&ref=ppx_yo2ov_dt_b_product_details) - I tested a bunch, liked these.
 - $5.99 [100 pieces diodes 1N4148](https://www.amazon.com/dp/B079KJ91JZ?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 - $11.22 [Low Profile keycaps](https://www.aliexpress.us/item/3256804654045406.html) - I really liked the look of these.
@@ -169,3 +169,13 @@ I first started working on getting my top layer to work as I would expect. Then 
 If you connect your phone to keyboard, it will reserve that profile connection to your phone, so you can switch it, clear it, etc unless you have a programmatic way to do that through your keyboard (i.e. `BT_CLR`, `BT_SEL X`).
 
 The [Keyboard Tester](keyboardtester.com/) website was a great resource for seeing if I had my keys set correctly. I had a sign of relief when I felt like I was just to the point where I was adding different key commands to be second layer for convenience instead of fixing a problem.
+
+## The Finished Product
+
+Does this compare to your high end keyboards...definitely not. Do my stabilizers sound different from the normal keys... yup. Will this break in about 3 weeks... that is definitely a possibility (especially since I bring it to and from work). But I do have this completely unique keyboard that I'm really happy with how it all turned out and it was a fun learning experience. I'm already tempted to make a 2nd one with all that I've learned from this run and the mechanical keyboard hobby in general.
+
+I'm also tempted to get a larger 3D printer, just so I can make the pieces complete.
+
+The next steps might be to learn how to design a PCB so I can save the hours of hand wiring future models!
+
+![Alt text](./files/images/finished.png "Runner65 finished")
