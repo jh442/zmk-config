@@ -121,6 +121,12 @@ When I was complete and it was time to test the firmware, I definitely had "rene
 
 ### The Pin Assignment
 
+#### Some defaults
+
+Screen pins. I couldn't find it in the original documentation so it took some searching in discord but the default pins for the OLED are `mosi = P0.17 and sck = P0.20`.
+
+#### The pin planning
+
 I printed off the diagram of the Nice!Nano and then actually drew out which columns and rows I were going to put to each pin. Since you solder from the back, just be aware that you are soldering the backwards. I absolutely made a few mistakes with this the first time and had to solder some of my pins.
 
 ![Alt text](./files/images/diagram.png "Runner65 pin assignments")
@@ -128,10 +134,6 @@ I printed off the diagram of the Nice!Nano and then actually drew out which colu
 I felt this was the most difficult part just because wires were starting to get crammed together. This is another reason in my design (since this was my first keyboard) that I wanted a little extra space in the design.
 
 ![Alt text](./files/images/wires.png "Runner65 wires")
-
-#### Some defaults
-
-Screen pins. I couldn't find it in the original documentation so it took some searching in discord but the default pins for the OLED are `mosi = P0.17 and sck = P0.20`.
 
 ## The Coding
 
