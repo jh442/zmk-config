@@ -22,7 +22,7 @@
 // |  CTL  |  WIN  |  ALT  |  SPACE                       | ALT | MO(1) | CTRL | LEFT | DOWN | RIGHT|
 // -------------------------------------------------------------------------------------------------
 			bindings = <
-	&kp ESC &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp MINUS &kp EQL  &kp BKSP
+	&kp ESC &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &lt F10 NUM_0 &kp MINUS &kp EQL  &kp BKSP
 	&kp TAB  &kp   Q   &kp   W   &kp   E   &kp   R   &kp   T   &kp   Y   &kp   U   &kp   I   &kp   O   &kp   P   &kp LBKT &kp RBKT &kp BSLH
 	&kp CLCK  &kp   A   &kp   S   &kp   D   &kp   F   &kp   G   &kp   H   &kp   J   &kp   K   &kp   L   &kp  SCLN  &kp  QUOT        &kp RET
 	&kp LSFT  &kp   Z   &kp   X   &kp   C   &kp   V   &kp   B   &kp   N   &kp   M   &kp  CMMA &kp  DOT  &kp FSLH      &kp RSFT &kp UP 
@@ -33,7 +33,7 @@
 		bt_layer {
 
 			bindings = <
-	&bt BT_CLR   &kp F1       &kp F2       &kp F3        &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &lt F10 F11  &kp C_VOLUME_DOWN &kp C_VOLUME_UP  &kp DEL
+	&bt BT_CLR   &kp F1       &kp F2       &kp F3        &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F11 &kp C_VOLUME_DOWN &kp C_VOLUME_UP  &kp DEL
 	&bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3   &trans   &trans   &trans   &trans   &trans   &trans   &trans &kp F11  &kp C_PP
 	&bt BT_SEL 1   &kp LEFT  &kp DOWN  &kp RIGHT &trans &trans  &trans  &trans  &trans   &trans   &trans   &kp GRAVE    &kp C_PP 
 	&bt BT_SEL 2   &trans    &trans    &trans    &trans &trans  &trans  &trans  &trans   &trans   &kp TILDE   &trans    &kp PG_UP
